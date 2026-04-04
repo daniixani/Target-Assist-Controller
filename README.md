@@ -1,7 +1,7 @@
 # Target-Assist-Controller
 The system is intended to monitor the operating condition of the device and transition between different control states based on user commands and system conditions. Its purpose is to indicate whether the device is idle, searching for a target alignment, ready for use, or placed in a lockout due to a fault. 
 
-#Project Overview
+# Project Overview
 This project explores how a controller can manage target-alignment behavior and fault-safe system states for a handheld air-vortex demonstrator. The goal is to move beyond simple detection and create a controller that interprets inputs, determines system state, and gives user feedback through LEDs and later a buzzer and hardware controls.
 
 The project was first implemented and verified in **Verilog** through simulation, then translated into an **Arduino-based hardware prototype** for manual input testing on a breadboard.
