@@ -74,11 +74,10 @@ v1_led_state_test.ino
 v2_manual_input_fsm.ino
 
 images/
-waveform.png
-searching_state.jpg
-ready_state.jpg
-lockout_state.jpg
-controller_concept.png
+waveform
+searching_state
+ready_state
+lockout_state
+controller_concept
 
-docs/
-project_summary.pdf
+
