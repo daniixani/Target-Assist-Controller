@@ -8,7 +8,6 @@ const int TARGET_PIN = 4; // manual jumper input for T
 const int ALIGN_PIN = 3; // manual jumper input for L
 const int FAULT_PIN = 2; // manual jumper input for F
 
-// These are the same states as your Verilog FSM
 enum State {
 IDLE,
 SEARCHING,
@@ -44,13 +43,10 @@ bool L = (digitalRead(ALIGN_PIN) == LOW); // Aligned
 bool F = (digitalRead(FAULT_PIN) == LOW); // Fault
 bool R = (digitalRead(RSET_BTN) == LOW); // Reset
 
-// =========================
 // FSM NEXT-STATE LOGIC
-// =========================
 switch (currentState) {
 
 case IDLE:
-// Verilog equivalent:
 // if (F) next_state = LOCKOUT;
 // else if (A) next_state = SEARCHING;
 // else next_state = IDLE;
@@ -62,7 +58,6 @@ currentState = SEARCHING;
 break;
 
 case SEARCHING:
-// Verilog equivalent:
 // if (F) next_state = LOCKOUT;
 // else if (!A) next_state = IDLE;
 // else if (T && L) next_state = READY;
@@ -101,10 +96,7 @@ currentState = IDLE;
 break;
 }
 
-// =========================
-// OUTPUT LOGIC (Moore FSM)
 // outputs depend only on current state
-// =========================
 switch (currentState) {
 case IDLE:
 // IDLE -> all LEDs off
